@@ -1,0 +1,26 @@
+{
+  "name": "credit-bureau-error-500",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTERR500"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "error": "INTERNAL_SERVER_ERROR",
+      "message": "An unexpected error occurred while processing the credit report request. The bureau service is temporarily unavailable. Please retry after some time.",
+      "errorCode": "CB-ERR-5001",
+      "timestamp": "2025-12-15T10:30:00.000Z",
+      "traceId": "7f8a9b0c-1d2e-3f4a-5b6c-7d8e9f0a1b2c"
+    }
+  }
+}

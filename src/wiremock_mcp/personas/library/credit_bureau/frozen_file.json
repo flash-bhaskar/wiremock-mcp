@@ -1,0 +1,32 @@
+{
+  "name": "credit-bureau-frozen-file",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTFRZ001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "FROZEN",
+      "score": null,
+      "scoreReason": "Credit file is frozen at the request of the consumer. No score or account details can be disclosed until the freeze is lifted by the consumer through the bureau portal.",
+      "totalAccounts": null,
+      "accounts": null,
+      "enquiries": null,
+      "personalInfo": {
+        "name": "MEENA DEVI JOSHI",
+        "pan": "TESTFRZ001",
+        "dob": "1980-05-11"
+      }
+    }
+  }
+}

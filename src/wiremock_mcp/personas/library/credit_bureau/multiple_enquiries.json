@@ -1,0 +1,115 @@
+{
+  "name": "credit-bureau-multiple-enquiries",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTENQ001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 650,
+      "scoreReason": "Fair credit score negatively impacted by a high number of recent credit enquiries (8 in the last 6 months), suggesting credit-hungry behavior. Underlying repayment history is moderate.",
+      "totalAccounts": 3,
+      "accounts": [
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-3398",
+          "institution": "ICICI BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 55000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2020-07-14",
+          "dateClosed": null
+        },
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL007391826450",
+          "institution": "AXIS BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 180000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2023-01-22",
+          "dateClosed": null
+        },
+        {
+          "type": "CONSUMER_LOAN",
+          "accountNumber": "CL003817264590",
+          "institution": "BAJAJ FINANCE LIMITED",
+          "status": "CLOSED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2021-10-05",
+          "dateClosed": "2023-10-05"
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-12-08",
+          "type": "PERSONAL_LOAN",
+          "institution": "HDFC BANK LIMITED",
+          "amount": 500000
+        },
+        {
+          "date": "2025-11-25",
+          "type": "PERSONAL_LOAN",
+          "institution": "ICICI BANK LIMITED",
+          "amount": 500000
+        },
+        {
+          "date": "2025-11-10",
+          "type": "CREDIT_CARD",
+          "institution": "AXIS BANK LIMITED",
+          "amount": 200000
+        },
+        {
+          "date": "2025-10-28",
+          "type": "PERSONAL_LOAN",
+          "institution": "KOTAK MAHINDRA BANK",
+          "amount": 400000
+        },
+        {
+          "date": "2025-10-15",
+          "type": "PERSONAL_LOAN",
+          "institution": "BAJAJ FINANCE LIMITED",
+          "amount": 300000
+        },
+        {
+          "date": "2025-09-30",
+          "type": "CREDIT_CARD",
+          "institution": "SBI CARD",
+          "amount": 150000
+        },
+        {
+          "date": "2025-09-12",
+          "type": "PERSONAL_LOAN",
+          "institution": "TATA CAPITAL",
+          "amount": 250000
+        },
+        {
+          "date": "2025-08-20",
+          "type": "CONSUMER_LOAN",
+          "institution": "HOME CREDIT INDIA",
+          "amount": 100000
+        }
+      ],
+      "personalInfo": {
+        "name": "RAJAT VERMA",
+        "pan": "TESTENQ001",
+        "dob": "1994-08-09"
+      }
+    }
+  }
+}

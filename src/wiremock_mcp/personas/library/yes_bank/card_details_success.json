@@ -1,0 +1,32 @@
+{
+  "name": "yes-bank-card-details-success",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/cards/v1/details",
+    "bodyPatterns": [
+      {
+        "contains": "TESTCARD003"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "cardNumber": "XXXX-XXXX-XXXX-7835",
+      "cardType": "CREDIT",
+      "cardNetwork": "VISA",
+      "expiryDate": "2029-08",
+      "cardStatus": "ACTIVE",
+      "creditLimit": 500000.00,
+      "availableLimit": 347250.00,
+      "outstandingAmount": 152750.00,
+      "dueDate": "2026-04-05",
+      "minimumDue": 7637.50
+    }
+  }
+}

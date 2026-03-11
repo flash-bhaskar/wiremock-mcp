@@ -1,0 +1,84 @@
+{
+  "name": "credit-bureau-has-overdues",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTOVD001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 520,
+      "scoreReason": "Low credit score driven by multiple accounts with significant overdue amounts and high days-past-due. Immediate remediation of overdue balances recommended.",
+      "totalAccounts": 4,
+      "accounts": [
+        {
+          "type": "HOME_LOAN",
+          "accountNumber": "HL009271836450",
+          "institution": "STATE BANK OF INDIA",
+          "status": "ACTIVE",
+          "balance": 5680000,
+          "overdueAmount": 234000,
+          "dpd": 150,
+          "dateOpened": "2018-06-22",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-9903",
+          "institution": "ICICI BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 245000,
+          "overdueAmount": 87000,
+          "dpd": 120,
+          "dateOpened": "2019-10-15",
+          "dateClosed": null
+        },
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL005628173940",
+          "institution": "IDFC FIRST BANK",
+          "status": "ACTIVE",
+          "balance": 320000,
+          "overdueAmount": 96000,
+          "dpd": 180,
+          "dateOpened": "2021-02-08",
+          "dateClosed": null
+        },
+        {
+          "type": "AUTO_LOAN",
+          "accountNumber": "AL003748291650",
+          "institution": "MAHINDRA FINANCE",
+          "status": "ACTIVE",
+          "balance": 412000,
+          "overdueAmount": 54000,
+          "dpd": 90,
+          "dateOpened": "2022-01-12",
+          "dateClosed": null
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-12-01",
+          "type": "PERSONAL_LOAN",
+          "institution": "BAJAJ FINANCE LIMITED",
+          "amount": 500000
+        }
+      ],
+      "personalInfo": {
+        "name": "MOHD FARHAN SHEIKH",
+        "pan": "TESTOVD001",
+        "dob": "1987-09-12"
+      }
+    }
+  }
+}

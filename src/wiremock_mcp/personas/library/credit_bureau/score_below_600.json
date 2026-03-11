@@ -1,0 +1,107 @@
+{
+  "name": "credit-bureau-score-below-600",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTSCORE480"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 480,
+      "scoreReason": "Poor credit score due to multiple overdue accounts, high credit utilization exceeding 85%, and several missed payments reported in the last 24 months.",
+      "totalAccounts": 5,
+      "accounts": [
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-6619",
+          "institution": "HDFC BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 192000,
+          "overdueAmount": 47000,
+          "dpd": 90,
+          "dateOpened": "2018-02-14",
+          "dateClosed": null
+        },
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL003917284650",
+          "institution": "FULLERTON INDIA",
+          "status": "ACTIVE",
+          "balance": 410000,
+          "overdueAmount": 68000,
+          "dpd": 120,
+          "dateOpened": "2021-08-20",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-2290",
+          "institution": "KOTAK MAHINDRA BANK",
+          "status": "ACTIVE",
+          "balance": 135000,
+          "overdueAmount": 22000,
+          "dpd": 60,
+          "dateOpened": "2020-05-12",
+          "dateClosed": null
+        },
+        {
+          "type": "TWO_WHEELER_LOAN",
+          "accountNumber": "TW001827364590",
+          "institution": "BAJAJ FINANCE LIMITED",
+          "status": "ACTIVE",
+          "balance": 52000,
+          "overdueAmount": 15600,
+          "dpd": 90,
+          "dateOpened": "2022-03-01",
+          "dateClosed": null
+        },
+        {
+          "type": "CONSUMER_LOAN",
+          "accountNumber": "CL006182739450",
+          "institution": "HOME CREDIT INDIA",
+          "status": "CLOSED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2019-11-10",
+          "dateClosed": "2022-11-10"
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-11-20",
+          "type": "PERSONAL_LOAN",
+          "institution": "MUTHOOT FINANCE",
+          "amount": 100000
+        },
+        {
+          "date": "2025-10-02",
+          "type": "PERSONAL_LOAN",
+          "institution": "TATA CAPITAL",
+          "amount": 200000
+        },
+        {
+          "date": "2025-09-14",
+          "type": "CREDIT_CARD",
+          "institution": "AXIS BANK LIMITED",
+          "amount": 100000
+        }
+      ],
+      "personalInfo": {
+        "name": "SURESH BABU REDDY",
+        "pan": "TESTSCORE480",
+        "dob": "1992-07-04"
+      }
+    }
+  }
+}

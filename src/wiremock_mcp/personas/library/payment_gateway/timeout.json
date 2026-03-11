@@ -1,0 +1,24 @@
+{
+  "name": "payment-gateway-timeout",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/payments/v1/.*",
+    "bodyPatterns": [
+      {
+        "contains": "TESTPAY_TIMEOUT"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "TIMEOUT",
+      "message": "The payment gateway did not respond within the expected time"
+    },
+    "fixedDelayMilliseconds": 35000
+  }
+}

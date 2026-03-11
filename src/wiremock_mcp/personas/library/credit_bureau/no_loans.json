@@ -1,0 +1,73 @@
+{
+  "name": "credit-bureau-no-loans",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTNOLOAN001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 720,
+      "scoreReason": "Good credit score built on consistent credit card repayment history. No installment loan accounts on record. Low credit utilization across all revolving accounts.",
+      "totalAccounts": 3,
+      "accounts": [
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-1187",
+          "institution": "HDFC BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 32000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2017-09-05",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-4456",
+          "institution": "AMERICAN EXPRESS",
+          "status": "ACTIVE",
+          "balance": 18500,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2019-12-18",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-7723",
+          "institution": "CITIBANK NA",
+          "status": "CLOSED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2015-06-22",
+          "dateClosed": "2021-06-22"
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-11-01",
+          "type": "CREDIT_CARD",
+          "institution": "AXIS BANK LIMITED",
+          "amount": 300000
+        }
+      ],
+      "personalInfo": {
+        "name": "SNEHA MALHOTRA",
+        "pan": "TESTNOLOAN001",
+        "dob": "1991-04-17"
+      }
+    }
+  }
+}

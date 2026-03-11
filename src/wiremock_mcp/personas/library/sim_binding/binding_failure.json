@@ -1,0 +1,25 @@
+{
+  "name": "sim-binding-binding-failure",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/sim/v1/bind",
+    "bodyPatterns": [
+      {
+        "contains": "TESTSIM002"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "FAILURE",
+      "errorCode": "OTP_MISMATCH",
+      "message": "OTP verification failed",
+      "attemptsRemaining": 2
+    }
+  }
+}

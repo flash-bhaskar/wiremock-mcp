@@ -1,0 +1,95 @@
+{
+  "name": "credit-bureau-score-750-plus",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTSCORE750"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 780,
+      "scoreReason": "Excellent credit history with consistent on-time payments across all accounts. Low credit utilization and long credit history contribute positively.",
+      "totalAccounts": 5,
+      "accounts": [
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-4523",
+          "institution": "HDFC BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 24500,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2016-03-10",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-8891",
+          "institution": "ICICI BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 15200,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2018-07-22",
+          "dateClosed": null
+        },
+        {
+          "type": "HOME_LOAN",
+          "accountNumber": "HL002938471625",
+          "institution": "STATE BANK OF INDIA",
+          "status": "ACTIVE",
+          "balance": 3245000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2019-01-15",
+          "dateClosed": null
+        },
+        {
+          "type": "AUTO_LOAN",
+          "accountNumber": "AL009182736450",
+          "institution": "BAJAJ FINANCE LIMITED",
+          "status": "CLOSED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2017-05-08",
+          "dateClosed": "2022-05-08"
+        },
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL007261839450",
+          "institution": "KOTAK MAHINDRA BANK",
+          "status": "CLOSED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2020-11-01",
+          "dateClosed": "2023-11-01"
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-08-12",
+          "type": "CREDIT_CARD",
+          "institution": "AXIS BANK LIMITED",
+          "amount": 500000
+        }
+      ],
+      "personalInfo": {
+        "name": "PRIYA VENKATESH IYER",
+        "pan": "TESTSCORE750",
+        "dob": "1985-11-20"
+      }
+    }
+  }
+}

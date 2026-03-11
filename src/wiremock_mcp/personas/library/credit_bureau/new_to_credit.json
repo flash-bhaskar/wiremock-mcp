@@ -1,0 +1,32 @@
+{
+  "name": "credit-bureau-new-to-credit",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTNTC001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": null,
+      "scoreReason": "NH - No credit history available for this PAN. The applicant has no prior credit accounts reported to the bureau.",
+      "totalAccounts": 0,
+      "accounts": [],
+      "enquiries": [],
+      "personalInfo": {
+        "name": "RAMESH KUMAR SHARMA",
+        "pan": "TESTNTC001",
+        "dob": "1998-06-15"
+      }
+    }
+  }
+}

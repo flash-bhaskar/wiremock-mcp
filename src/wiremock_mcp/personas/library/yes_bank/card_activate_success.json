@@ -1,0 +1,25 @@
+{
+  "name": "yes-bank-card-activate-success",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/cards/v1/activate",
+    "bodyPatterns": [
+      {
+        "contains": "TESTCARD001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "cardNumber": "XXXX-XXXX-XXXX-4921",
+      "activationDate": "2026-03-11T10:30:00.000Z",
+      "message": "Card has been successfully activated. You may now use your card for transactions."
+    }
+  }
+}

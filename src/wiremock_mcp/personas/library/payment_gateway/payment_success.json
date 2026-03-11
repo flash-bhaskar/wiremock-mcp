@@ -1,0 +1,29 @@
+{
+  "name": "payment-gateway-payment-success",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/payments/v1/process",
+    "bodyPatterns": [
+      {
+        "contains": "TESTPAY001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "transactionId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "amount": 1500.00,
+      "currency": "INR",
+      "paymentMethod": "UPI",
+      "merchantId": "MERCH-PG-98765",
+      "timestamp": "2026-03-11T10:15:30.123Z",
+      "bankReferenceNumber": "BNKREF20260311101530X9Y8Z7"
+    }
+  }
+}

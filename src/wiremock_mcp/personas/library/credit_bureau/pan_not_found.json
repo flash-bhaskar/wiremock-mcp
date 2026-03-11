@@ -1,0 +1,32 @@
+{
+  "name": "credit-bureau-pan-not-found",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTPNF001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "PAN_NOT_FOUND",
+      "score": null,
+      "scoreReason": "No records found matching the provided PAN. The PAN may be invalid, recently issued, or not yet registered with any credit institution reporting to the bureau.",
+      "totalAccounts": null,
+      "accounts": null,
+      "enquiries": null,
+      "personalInfo": {
+        "name": null,
+        "pan": "TESTPNF001",
+        "dob": null
+      }
+    }
+  }
+}

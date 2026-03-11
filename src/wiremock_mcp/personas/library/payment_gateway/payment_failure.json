@@ -1,0 +1,27 @@
+{
+  "name": "payment-gateway-payment-failure",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/payments/v1/process",
+    "bodyPatterns": [
+      {
+        "contains": "TESTPAY002"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "FAILURE",
+      "errorCode": "INSUFFICIENT_FUNDS",
+      "transactionId": "f7e6d5c4-b3a2-1098-fedc-ba9876543210",
+      "amount": 1500.00,
+      "currency": "INR",
+      "message": "Transaction declined due to insufficient funds in the payer account"
+    }
+  }
+}

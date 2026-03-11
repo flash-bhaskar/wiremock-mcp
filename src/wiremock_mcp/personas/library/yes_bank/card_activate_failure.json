@@ -1,0 +1,24 @@
+{
+  "name": "yes-bank-card-activate-failure",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/cards/v1/activate",
+    "bodyPatterns": [
+      {
+        "contains": "TESTCARD002"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "FAILURE",
+      "errorCode": "CARD_ALREADY_ACTIVE",
+      "message": "Card activation failed. The card is already in an active state and does not require re-activation."
+    }
+  }
+}

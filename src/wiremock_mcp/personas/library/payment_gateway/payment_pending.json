@@ -1,0 +1,27 @@
+{
+  "name": "payment-gateway-payment-pending",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/payments/v1/process",
+    "bodyPatterns": [
+      {
+        "contains": "TESTPAY003"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "PENDING",
+      "transactionId": "d4c3b2a1-0987-6543-dcba-210fedcba987",
+      "amount": 1500.00,
+      "currency": "INR",
+      "estimatedCompletionTime": "2026-03-11T10:20:30.000Z",
+      "message": "Payment is being processed"
+    }
+  }
+}

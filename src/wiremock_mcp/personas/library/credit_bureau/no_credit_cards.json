@@ -1,0 +1,73 @@
+{
+  "name": "credit-bureau-no-credit-cards",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTNOCC001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 700,
+      "scoreReason": "Good credit score with a healthy loan repayment track record. No revolving credit (credit card) accounts on file. Score based entirely on installment loan history.",
+      "totalAccounts": 3,
+      "accounts": [
+        {
+          "type": "HOME_LOAN",
+          "accountNumber": "HL007362819450",
+          "institution": "STATE BANK OF INDIA",
+          "status": "ACTIVE",
+          "balance": 2850000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2020-02-14",
+          "dateClosed": null
+        },
+        {
+          "type": "AUTO_LOAN",
+          "accountNumber": "AL006182739450",
+          "institution": "HDFC BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 485000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2022-08-20",
+          "dateClosed": null
+        },
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL008192736450",
+          "institution": "ICICI BANK LIMITED",
+          "status": "CLOSED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2019-05-10",
+          "dateClosed": "2022-05-10"
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-09-18",
+          "type": "HOME_LOAN",
+          "institution": "BANK OF BARODA",
+          "amount": 4000000
+        }
+      ],
+      "personalInfo": {
+        "name": "KAVITHA NARAYANAN PILLAI",
+        "pan": "TESTNOCC001",
+        "dob": "1988-01-30"
+      }
+    }
+  }
+}

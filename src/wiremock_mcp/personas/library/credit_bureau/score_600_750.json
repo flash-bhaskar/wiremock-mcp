@@ -1,0 +1,90 @@
+{
+  "name": "credit-bureau-score-600-750",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTSCORE660"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 660,
+      "scoreReason": "Fair credit score. Some late payments reported in the last 12 months have negatively impacted the score. Moderate credit utilization observed.",
+      "totalAccounts": 4,
+      "accounts": [
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-7712",
+          "institution": "AXIS BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 78500,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2019-04-18",
+          "dateClosed": null
+        },
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL004829173650",
+          "institution": "HDFC BANK LIMITED",
+          "status": "ACTIVE",
+          "balance": 285000,
+          "overdueAmount": 12500,
+          "dpd": 30,
+          "dateOpened": "2022-06-10",
+          "dateClosed": null
+        },
+        {
+          "type": "HOME_LOAN",
+          "accountNumber": "HL008173629540",
+          "institution": "UNION BANK OF INDIA",
+          "status": "ACTIVE",
+          "balance": 4120000,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2020-09-25",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-3345",
+          "institution": "SBI CARD",
+          "status": "ACTIVE",
+          "balance": 43200,
+          "overdueAmount": 5800,
+          "dpd": 15,
+          "dateOpened": "2021-01-05",
+          "dateClosed": null
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-10-05",
+          "type": "PERSONAL_LOAN",
+          "institution": "BAJAJ FINANCE LIMITED",
+          "amount": 300000
+        },
+        {
+          "date": "2025-07-18",
+          "type": "CREDIT_CARD",
+          "institution": "ICICI BANK LIMITED",
+          "amount": 200000
+        }
+      ],
+      "personalInfo": {
+        "name": "ANIL PRAKASH GUPTA",
+        "pan": "TESTSCORE660",
+        "dob": "1990-03-28"
+      }
+    }
+  }
+}

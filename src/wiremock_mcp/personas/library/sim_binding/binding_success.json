@@ -1,0 +1,27 @@
+{
+  "name": "sim-binding-binding-success",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/sim/v1/bind",
+    "bodyPatterns": [
+      {
+        "contains": "TESTSIM001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "mobileNumber": "9876543210",
+      "simOperator": "JIO",
+      "bindingId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "bindingTimestamp": "2026-03-11T10:30:00.000Z",
+      "verified": true
+    }
+  }
+}

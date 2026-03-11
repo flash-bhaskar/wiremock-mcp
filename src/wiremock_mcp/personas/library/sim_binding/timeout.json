@@ -1,0 +1,24 @@
+{
+  "name": "sim-binding-timeout",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/sim/v1/.*",
+    "bodyPatterns": [
+      {
+        "contains": "TESTSIM_TIMEOUT"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "TIMEOUT",
+      "message": "Request timed out"
+    },
+    "fixedDelayMilliseconds": 35000
+  }
+}

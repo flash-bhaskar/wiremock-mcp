@@ -1,0 +1,24 @@
+{
+  "name": "yes-bank-timeout",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/cards/v1/.*",
+    "bodyPatterns": [
+      {
+        "contains": "TESTCARD_TIMEOUT"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "message": "Request processed."
+    },
+    "fixedDelayMilliseconds": 35000
+  }
+}

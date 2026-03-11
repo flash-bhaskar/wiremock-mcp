@@ -1,0 +1,90 @@
+{
+  "name": "credit-bureau-has-written-off",
+  "priority": 1,
+  "request": {
+    "method": "POST",
+    "urlPattern": "/credit-report/v1/fetch",
+    "bodyPatterns": [
+      {
+        "contains": "TESTWO001"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "status": "SUCCESS",
+      "score": 350,
+      "scoreReason": "Very poor credit score. One or more accounts have been written off by the lending institution, indicating severe delinquency. Settlement and write-off history severely impacts creditworthiness.",
+      "totalAccounts": 4,
+      "accounts": [
+        {
+          "type": "PERSONAL_LOAN",
+          "accountNumber": "PL002839174650",
+          "institution": "HDFC BANK LIMITED",
+          "status": "WRITTEN_OFF",
+          "balance": 378000,
+          "overdueAmount": 378000,
+          "dpd": 365,
+          "dateOpened": "2019-04-18",
+          "dateClosed": null
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-5501",
+          "institution": "AXIS BANK LIMITED",
+          "status": "WRITTEN_OFF",
+          "balance": 192000,
+          "overdueAmount": 192000,
+          "dpd": 270,
+          "dateOpened": "2018-08-05",
+          "dateClosed": null
+        },
+        {
+          "type": "CONSUMER_LOAN",
+          "accountNumber": "CL004917283650",
+          "institution": "HOME CREDIT INDIA",
+          "status": "SETTLED",
+          "balance": 0,
+          "overdueAmount": 0,
+          "dpd": 0,
+          "dateOpened": "2020-01-20",
+          "dateClosed": "2023-06-15"
+        },
+        {
+          "type": "CREDIT_CARD",
+          "accountNumber": "XXXX-XXXX-XXXX-8874",
+          "institution": "KOTAK MAHINDRA BANK",
+          "status": "ACTIVE",
+          "balance": 67000,
+          "overdueAmount": 23000,
+          "dpd": 60,
+          "dateOpened": "2022-11-10",
+          "dateClosed": null
+        }
+      ],
+      "enquiries": [
+        {
+          "date": "2025-06-10",
+          "type": "PERSONAL_LOAN",
+          "institution": "FULLERTON INDIA",
+          "amount": 150000
+        },
+        {
+          "date": "2025-03-22",
+          "type": "PERSONAL_LOAN",
+          "institution": "MUTHOOT FINANCE",
+          "amount": 100000
+        }
+      ],
+      "personalInfo": {
+        "name": "DEEPAK KUMAR SINGH",
+        "pan": "TESTWO001",
+        "dob": "1983-12-25"
+      }
+    }
+  }
+}
